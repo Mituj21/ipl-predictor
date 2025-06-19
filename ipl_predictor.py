@@ -11,7 +11,8 @@ def load_data():
     return df
 
 df = load_data()
-team_stats = df['match_winner'].value_counts().to_dict()
+team_stats = df['winner'].value_counts().to_dict()
+
 
 def get_team_strength(team):
     return team_stats.get(team, 10)
