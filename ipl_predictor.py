@@ -4,7 +4,8 @@ import pandas as pd
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("Cricket_data.csv")
+   df = pd.read_csv("Cricket_data.csv")
+df.columns = df.columns.str.strip()
     df = df[df['home_team'].notna() & df['away_team'].notna()]
     df = df[df['home_team'] != 'TBA']
     df = df[df['away_team'] != 'TBA']
